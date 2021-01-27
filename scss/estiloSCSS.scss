@@ -112,11 +112,19 @@ $bar: lucille, niceto, cupula, circus, mr-jones;
     }
 }
 
+.section div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+
 .section__bio {
 	line-height: 150%;
-	max-width: 1300px;
 	margin: auto;
-	font-size: 1.125rem;
+	font-size: .5rem;
 
 }
 
