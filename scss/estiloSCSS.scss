@@ -1,0 +1,176 @@
+
+$font: 2rem;
+$enlace: white;
+
+@mixin titulo ($fuente) {
+	text-align: center;
+	font-size: $fuente;
+	font-family: "Fjalla One", verdana;
+	text-transform: uppercase;
+	margin-top: 50px;
+	margin-bottom: 20px;
+
+}
+
+@import "../bootstrap.min.css";
+
+html {
+	min-height: 100%;
+}
+
+body {
+	color: white;
+	background-color: black;
+	font-size: 16px;
+	font-family: "Cabin";
+}
+
+.body__index {
+	background-image: url(background.jpg);
+	background-size: cover;
+	background-position: center;
+/*	overflow-x: hidden;*/
+}
+
+.col-12.text-center { 	
+	h1 {
+	margin-top: 10rem;
+	font-size: $font * 3;
+	font-family: "Fjalla One", verdana;
+	opacity: 0.9;
+	}
+	h2 {
+	   font-size: $font * 1;
+	   font-style: italic;
+	   font-weight: lighter;
+	}   
+	a {
+		text-decoration: none;
+		color:$enlace;
+		font-weight: bold;
+		font-family: "Shadows Into Light", verdana;
+		transition: opacity 0.3s;
+	}
+		
+}
+
+a:hover { opacity: 0.5; }
+
+li {
+	list-style-type: none;
+	font-family: "Shadows Into Light", verdana;
+	font-size: $font * 1;
+	padding: 5px;
+}
+
+ol {
+	display: flex;
+	margin-bottom: 8rem;
+	li:first-child { 
+	margin-left:0; 
+	}
+	li em { 
+		display: block;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+}
+
+$bar: lucille, niceto, cupula, circus, mr-jones;
+
+@each $show in $bar {
+	##{$show} {
+		background-image: url(../img/#{$show}.jpg);
+		text-align: center;
+	}
+}				
+
+.shows li {
+	border: 2px solid $enlace;
+	padding: 20px;
+	flex-basis: 33.3%;
+	margin: 20px;
+	height: 400px;
+	background: transparent url(../img/makena.jpg) no-repeat;
+	background-size: cover;
+	cursor: pointer; 
+}
+
+.navbar.navbar-dark.bg-dark a {
+	font-family: "Shadows Into Light", verdana;
+	font-size: $font - .5;
+	color: $enlace;
+	transition: opacity 0.3s;
+	text-decoration: none;
+	margin: 0 5px;
+}
+
+.title {
+    @include titulo (2.5rem)
+	&.smaller {
+		font-size: $font - .5;
+    }
+}
+
+.section__bio {
+	line-height: 150%;
+	max-width: 1300px;
+	margin: auto;
+	font-size: 1.125rem;
+
+}
+
+.section__video {
+	display: block;
+	text-align: center;
+	font-size: 2rem;
+	&--click {
+		text-decoration: none;
+		color: $enlace;
+		font-weight: bold;
+		font-family: "Shadows Into Light", verdana;
+		transition: opacity 0.3s;
+	}
+}
+
+#images .carousel-indicators li {
+	border: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+}
+
+.form-group {
+	line-height: 50px;
+}
+
+.table-responsive {
+	overflow-x: hidden;
+}
+
+tr {
+	transition: transform 2s;
+	&:hover {
+		transform: scale(1.3);	
+	}
+}
+
+textarea {
+	resize: vertical;
+	min-height: 200px;
+}
+
+@media (max-width: 760px) {
+	#index {
+		background-image: none;
+	}
+}
+
+
+@media (max-width: 1000px) {
+	.shows li {
+		height: 200px;
+		font-size: 15px;
+		margin: 5px;	
+	}
+}
